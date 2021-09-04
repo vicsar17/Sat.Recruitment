@@ -4,8 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30709.64
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Api", "Sat.Recruitment.Api\Sat.Recruitment.Api.csproj", "{1F342EA2-E7B1-4E53-AB93-9C62288D3FB0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D09663DB-586D-4B46-A3D8-B294700024BA} = {D09663DB-586D-4B46-A3D8-B294700024BA}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sat.Recruitment.Test", "Sat.Recruitment.Test\Sat.Recruitment.Test.csproj", "{42E696E9-2672-4B91-AD96-353A69F7219C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Test", "Sat.Recruitment.Test\Sat.Recruitment.Test.csproj", "{42E696E9-2672-4B91-AD96-353A69F7219C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.DataAccess", "Sat.Recruitment.DataAccess\Sat.Recruitment.DataAccess.csproj", "{D09663DB-586D-4B46-A3D8-B294700024BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Domain", "Sat.Recruitment.Domain\Sat.Recruitment.Domain.csproj", "{BB89D1B6-420E-421C-AB37-45E71989F094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +28,14 @@ Global
 		{42E696E9-2672-4B91-AD96-353A69F7219C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42E696E9-2672-4B91-AD96-353A69F7219C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42E696E9-2672-4B91-AD96-353A69F7219C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09663DB-586D-4B46-A3D8-B294700024BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09663DB-586D-4B46-A3D8-B294700024BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09663DB-586D-4B46-A3D8-B294700024BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09663DB-586D-4B46-A3D8-B294700024BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB89D1B6-420E-421C-AB37-45E71989F094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB89D1B6-420E-421C-AB37-45E71989F094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB89D1B6-420E-421C-AB37-45E71989F094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB89D1B6-420E-421C-AB37-45E71989F094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

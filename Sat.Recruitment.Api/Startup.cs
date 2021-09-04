@@ -1,15 +1,12 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Sat.Recruitment.Api.Infrastructure;
+using Sat.Recruitment.Contexts;
 
 namespace Sat.Recruitment.Api
 {
@@ -27,6 +24,18 @@ namespace Sat.Recruitment.Api
         {
             services.AddControllers();
             services.AddSwaggerGen();
+
+            // Add framework services.
+            services.AddAutoMapper(typeof(MappingProfile));
+            services.AddMvc()
+                .ConfigureApiBehaviorOptions(opt => { opt.SuppressModelStateInvalidFilter = true; });
+            services.AddDbContext<DataContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Main"));
+            });
+
+            //Configure DataAccess Services - dependency Injection
+            Installer.ConfigureServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +61,9 @@ namespace Sat.Recruitment.Api
             {
                 endpoints.MapControllers();
             });
+
+            //to catch the exceptions
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
         }
     }
 }
